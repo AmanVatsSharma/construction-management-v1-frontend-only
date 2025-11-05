@@ -3,24 +3,17 @@
 import {
   X,
   Home,
-  BarChart3,
-  MessageSquare,
-  CheckSquare,
-  FileText,
   Settings,
   LogOut,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  Calendar,
-  DollarSign,
-  AlertTriangle,
-  FileCheck,
   Layers,
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Logo } from "@/components/logo"
+import { useSidebar } from "@/lib/sidebar-context"
 
 interface SidebarProps {
   isOpen: boolean
@@ -31,21 +24,29 @@ interface SidebarProps {
 
 export function Sidebar({ isOpen, isCollapsed, onToggle, onCollapse }: SidebarProps) {
   const pathname = usePathname()
+  const { getEnabledModules } = useSidebar()
 
-  const navItems = [
+  // Always visible items
+  const alwaysVisibleItems = [
     { icon: Home, label: "Dashboard", href: "/" },
     { icon: Layers, label: "Modules", href: "/modules" },
-    { icon: BarChart3, label: "Projects", href: "/projects" },
-    { icon: MessageSquare, label: "Chat", href: "/chat" },
-    { icon: CheckSquare, label: "Tasks", href: "/tasks" },
-    { icon: FileText, label: "Reports", href: "/reports" },
-    { icon: Calendar, label: "Site Diary", href: "/site-diary" },
-    { icon: DollarSign, label: "Budget", href: "/budget" },
-    { icon: FileCheck, label: "RFI & Submittals", href: "/rfi" },
-    { icon: AlertTriangle, label: "Risk", href: "/risk" },
-    { icon: DollarSign, label: "Invoicing", href: "/invoicing" },
-    { icon: Settings, label: "Settings", href: "/settings" },
   ]
+
+  // Get enabled modules from context
+  const enabledModules = getEnabledModules()
+
+  // Convert enabled modules to nav items format
+  const enabledNavItems = enabledModules.map((module) => ({
+    icon: module.icon,
+    label: module.label,
+    href: module.href,
+  }))
+
+  // Settings is always at the end
+  const settingsItem = { icon: Settings, label: "Settings", href: "/settings" }
+
+  // Combine all nav items: Dashboard, Modules, enabled modules, Settings
+  const navItems = [...alwaysVisibleItems, ...enabledNavItems, settingsItem]
 
   return (
     <>

@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ChatProvider } from "@/lib/chat-context"
 import { AuthProvider } from "@/lib/auth-context"
+import { SidebarProvider } from "@/lib/sidebar-context"
 import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 
@@ -33,7 +34,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
         <AuthProvider>
-          <ChatProvider>{children}</ChatProvider>
+          <SidebarProvider>
+            <ChatProvider>{children}</ChatProvider>
+          </SidebarProvider>
         </AuthProvider>
         <Analytics />
         <Toaster />
