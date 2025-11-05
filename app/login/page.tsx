@@ -8,6 +8,7 @@ import { useAuth } from "@/lib/auth-context"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Logo } from "@/components/logo"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -44,9 +45,9 @@ export default function LoginPage() {
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-8 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
               <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-blue-600 font-bold text-lg font-heading">NV</span>
+                <Logo size={24} strokeColor="#0f4c81" />
               </div>
-              <h1 className="text-white text-2xl font-bold font-heading">NvLogic</h1>
+              <h1 className="text-white text-2xl font-bold font-heading">Novologic</h1>
             </div>
             <p className="text-blue-100 text-sm">Construction Project Manager</p>
           </div>

@@ -8,6 +8,7 @@ import { useAuth } from "@/lib/auth-context"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Logo } from "@/components/logo"
 
 export default function SignupPage() {
   const router = useRouter()
@@ -46,9 +47,9 @@ export default function SignupPage() {
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-8 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
               <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-blue-600 font-bold text-lg font-heading">NV</span>
+                <Logo size={24} strokeColor="#0f4c81" />
               </div>
-              <h1 className="text-white text-2xl font-bold font-heading">NvLogic</h1>
+              <h1 className="text-white text-2xl font-bold font-heading">Novologic</h1>
             </div>
             <p className="text-blue-100 text-sm">Create Your Account</p>
           </div>
@@ -56,7 +57,7 @@ export default function SignupPage() {
           {/* Form content */}
           <div className="p-8">
             <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-2">Get Started</h2>
-            <p className="text-neutral-600 dark:text-neutral-400 mb-6">Join construction professionals using NvLogic</p>
+            <p className="text-neutral-600 dark:text-neutral-400 mb-6">Join construction professionals using Novologic</p>
 
             {error && (
               <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-3 mb-4 text-red-600 dark:text-red-400 text-sm">

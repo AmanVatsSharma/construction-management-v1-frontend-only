@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
 import { Button } from "@/components/ui/button"
+import { Logo } from "@/components/logo"
 import { Card } from "@/components/ui/card"
 
 interface Project {
@@ -124,10 +125,10 @@ export default function SelectProjectPage() {
         <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold font-heading">NV</span>
+              <Logo size={24} strokeColor="white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-neutral-900 dark:text-white font-heading">NvLogic</h1>
+              <h1 className="text-2xl font-bold text-neutral-900 dark:text-white font-heading">Novologic</h1>
               <p className="text-xs text-neutral-500 dark:text-neutral-400">Select a Project</p>
             </div>
           </div>

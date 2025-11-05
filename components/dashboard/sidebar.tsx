@@ -20,6 +20,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { Logo } from "@/components/logo"
 
 interface SidebarProps {
   isOpen: boolean
@@ -63,15 +64,19 @@ export function Sidebar({ isOpen, isCollapsed, onToggle, onCollapse }: SidebarPr
       >
         {/* Header with Logo */}
         <div className="p-4 border-b border-border flex items-center justify-between flex-shrink-0">
-          {!isCollapsed && (
+          {!isCollapsed ? (
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-primary-foreground font-bold text-lg font-heading">C</span>
+                <Logo size={24} strokeColor="white" />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-foreground font-heading">ConstructHub</h1>
+                <h1 className="text-lg font-bold text-foreground font-heading">Novologic</h1>
                 <p className="text-xs text-muted-foreground">v0.1</p>
               </div>
+            </div>
+          ) : (
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 mx-auto">
+              <Logo size={24} strokeColor="white" />
             </div>
           )}
           <button

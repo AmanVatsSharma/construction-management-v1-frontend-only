@@ -15,7 +15,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "NvLogic - Construction Project Manager",
+  title: "Novologic - Construction Project Manager",
   description: "Professional Construction Project Management Platform",
   generator: "v0.1",
 }

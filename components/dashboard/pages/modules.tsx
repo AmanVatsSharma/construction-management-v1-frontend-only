@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
 import { useEffect, useState } from "react"
 import { ArrowRight, Folder, TrendingUp, FileText } from "lucide-react"
+import { Logo } from "@/components/logo"
 
 export function Modules() {
   const router = useRouter()
@@ -57,9 +58,9 @@ export function Modules() {
       <div className="max-w-6xl mx-auto mb-12">
         <div className="mb-2 flex items-center gap-2">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold font-heading">N</span>
+            <Logo size={20} strokeColor="white" />
           </div>
-          <span className="text-sm font-medium text-primary font-heading">NvLogic</span>
+          <span className="text-sm font-medium text-primary font-heading">Novologic</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2 font-heading">Project Modules</h1>
         <p className="text-lg text-muted-foreground">Select a module to manage your construction project</p>
