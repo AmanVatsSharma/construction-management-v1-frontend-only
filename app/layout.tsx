@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ChatProvider } from "@/lib/chat-context"
 import { AuthProvider } from "@/lib/auth-context"
+import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 
 // Using Inter as fallback since Geist is not available in next/font/google
@@ -35,6 +36,7 @@ export default function RootLayout({
           <ChatProvider>{children}</ChatProvider>
         </AuthProvider>
         <Analytics />
+        <Toaster />
       </body>
     </html>
   )

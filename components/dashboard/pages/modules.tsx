@@ -5,11 +5,13 @@ import { useAuth } from "@/lib/auth-context"
 import { useEffect, useState } from "react"
 import { ArrowRight, Folder, TrendingUp, FileText } from "lucide-react"
 import { Logo } from "@/components/logo"
+import { useToast } from "@/hooks/use-toast"
 
 export function Modules() {
   const router = useRouter()
   const { isAuthenticated } = useAuth()
-  const [selectedModule, setSelectedModule] = useState<string | null>(null)
+  const { toast } = useToast()
+  const [openingModule, setOpeningModule] = useState<string | null>(null)
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -43,13 +45,29 @@ export function Modules() {
       icon: FileText,
       color: "from-green-600 to-green-400",
       features: ["Reports", "Analytics", "Archives", "Export"],
-      href: "/project-report",
+      href: "https://project-registor-report-maker-stone.vercel.app/reports",
+      isExternal: true,
     },
   ]
 
-  const handleModuleSelect = (href: string) => {
-    setSelectedModule(href)
-    setTimeout(() => router.push(href), 300)
+  const handleModuleSelect = (moduleId: string, href: string, isExternal?: boolean) => {
+    // If it's the project-report module (external), open in new tab
+    if (isExternal) {
+      window.open(href, "_blank", "noopener,noreferrer")
+      return
+    }
+
+    // For other modules, show loading state and then toast
+    setOpeningModule(moduleId)
+    
+    setTimeout(() => {
+      setOpeningModule(null)
+      toast({
+        title: "Module not accessible",
+        description: "This module is currently unavailable. Please try again later.",
+        variant: "destructive",
+      })
+    }, 2000)
   }
 
   return (
@@ -70,14 +88,14 @@ export function Modules() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
         {modules.map((module) => {
           const Icon = module.icon
-          const isSelected = selectedModule === module.href
+          const isOpening = openingModule === module.id
 
           return (
             <button
               key={module.id}
-              onClick={() => handleModuleSelect(module.href)}
+              onClick={() => handleModuleSelect(module.id, module.href, module.isExternal)}
               className={`relative group text-left transition-all duration-300 transform ${
-                isSelected ? "scale-95 opacity-50" : "hover:scale-105"
+                isOpening ? "scale-95 opacity-50" : "hover:scale-105"
               }`}
             >
               {/* Card Background */}
@@ -127,11 +145,11 @@ export function Modules() {
                 </div>
 
                 {/* Loading Indicator */}
-                {isSelected && (
+                {isOpening && (
                   <div className="absolute inset-0 flex items-center justify-center bg-background/50 rounded-2xl backdrop-blur-sm">
                     <div className="flex flex-col items-center gap-3">
                       <div className="w-8 h-8 border-3 border-primary border-t-transparent rounded-full animate-spin" />
-                      <p className="text-sm font-medium text-foreground">Loading...</p>
+                      <p className="text-sm font-medium text-foreground">Opening...</p>
                     </div>
                   </div>
                 )}
