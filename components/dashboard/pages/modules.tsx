@@ -65,7 +65,6 @@ export function Modules() {
       toast({
         title: "Module not accessible",
         description: "This module is currently unavailable. Please try again later.",
-        variant: "destructive",
       })
     }, 2000)
   }
