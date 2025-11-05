@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/budget/page": "/budget",
+  "/chat/page": "/chat",
+  "/documents/page": "/documents",
+  "/invoicing/page": "/invoicing",
+  "/login/page": "/login",
+  "/modules/page": "/modules",
+  "/page": "/",
+  "/reports/page": "/reports",
+  "/rfi/page": "/rfi",
+  "/risk/page": "/risk",
+  "/select-project/page": "/select-project",
+  "/signup/page": "/signup",
+  "/site-diary/page": "/site-diary",
+  "/tasks/page": "/tasks"
+}

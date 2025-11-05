@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/budget/page": "app/budget/page.js",
+  "/chat/page": "app/chat/page.js",
+  "/documents/page": "app/documents/page.js",
+  "/invoicing/page": "app/invoicing/page.js",
+  "/login/page": "app/login/page.js",
+  "/modules/page": "app/modules/page.js",
+  "/page": "app/page.js",
+  "/reports/page": "app/reports/page.js",
+  "/rfi/page": "app/rfi/page.js",
+  "/risk/page": "app/risk/page.js",
+  "/select-project/page": "app/select-project/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/site-diary/page": "app/site-diary/page.js",
+  "/tasks/page": "app/tasks/page.js"
+}
