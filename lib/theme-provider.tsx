@@ -12,7 +12,7 @@ import * as React from "react"
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 import type { ThemeProviderProps } from "next-themes"
 
-export type Theme = "blueprint" | "dark" | "construction"
+export type Theme = "theme-blueprint" | "theme-dark" | "theme-construction"
 
 interface CustomThemeProviderProps extends Omit<ThemeProviderProps, "themes"> {
   children: React.ReactNode
@@ -22,8 +22,8 @@ export function ThemeProvider({ children, ...props }: CustomThemeProviderProps) 
   return (
     <NextThemesProvider
       {...props}
-      themes={["blueprint", "dark", "construction"]}
-      defaultTheme="blueprint"
+      themes={["theme-blueprint", "theme-dark", "theme-construction"]}
+      defaultTheme="theme-blueprint"
       attribute="class"
       enableSystem={false}
       storageKey="novologic-theme"

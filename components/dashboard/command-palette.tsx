@@ -170,24 +170,24 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
 
         {/* Theme Switcher */}
         <CommandGroup heading="Theme">
-          <CommandItem onSelect={() => handleThemeChange("blueprint")}>
+          <CommandItem onSelect={() => handleThemeChange("theme-blueprint")}>
             <Sun className="mr-2 h-4 w-4 text-primary" />
             <span>Blueprint Industrial</span>
-            {theme === "blueprint" && (
+            {theme === "theme-blueprint" && (
               <CheckSquare className="ml-auto h-4 w-4 text-primary" />
             )}
           </CommandItem>
-          <CommandItem onSelect={() => handleThemeChange("dark")}>
+          <CommandItem onSelect={() => handleThemeChange("theme-dark")}>
             <Moon className="mr-2 h-4 w-4 text-blue-500" />
             <span>Z-Black Modern</span>
-            {theme === "dark" && (
+            {theme === "theme-dark" && (
               <CheckSquare className="ml-auto h-4 w-4 text-primary" />
             )}
           </CommandItem>
-          <CommandItem onSelect={() => handleThemeChange("construction")}>
+          <CommandItem onSelect={() => handleThemeChange("theme-construction")}>
             <HardHat className="mr-2 h-4 w-4 text-yellow-500" />
             <span>Classic Construction</span>
-            {theme === "construction" && (
+            {theme === "theme-construction" && (
               <CheckSquare className="ml-auto h-4 w-4 text-primary" />
             )}
           </CommandItem>

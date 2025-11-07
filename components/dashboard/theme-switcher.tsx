@@ -30,7 +30,7 @@ export interface ThemeOption {
 
 const themes: ThemeOption[] = [
   {
-    id: "blueprint",
+    id: "theme-blueprint",
     name: "Blueprint Industrial",
     description: "Professional and clean - Modern blueprint theme",
     icon: Sun,
@@ -42,7 +42,7 @@ const themes: ThemeOption[] = [
     },
   },
   {
-    id: "dark",
+    id: "theme-dark",
     name: "Z-Black Modern",
     description: "Ultra modern - Pure black with neon accents",
     icon: Moon,
@@ -54,7 +54,7 @@ const themes: ThemeOption[] = [
     },
   },
   {
-    id: "construction",
+    id: "theme-construction",
     name: "Classic Construction",
     description: "Bold and industrial - Yellow and charcoal palette",
     icon: HardHat,

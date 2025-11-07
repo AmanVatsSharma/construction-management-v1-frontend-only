@@ -55,24 +55,27 @@ export function DashboardLayout({ children, forceChatOpen }: DashboardLayoutProp
   const showMainContent = !isSmallScreen || !showChatPanel
 
   return (
-    <div className="flex h-screen bg-background text-foreground overflow-hidden">
-      {/* Enhanced Sidebar */}
-      <Sidebar
-        isOpen={isSidebarOpen}
-        isCollapsed={isSidebarCollapsed}
-        onToggle={setIsSidebarOpen}
-        onCollapse={setIsSidebarCollapsed}
+    <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
+      {/* Dual-Stacked Header - Full Width Above Everything */}
+      <Topbar
+        onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+        onToggleChat={() => setChatOpen(!showChatPanel)}
+        onToggleFeaturePanel={() => setIsFeaturePanelOpen(!isFeaturePanelOpen)}
+        onSearchOpen={() => setIsCommandPaletteOpen(true)}
       />
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Dual-Stacked Header */}
-        <Topbar
-          onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
-          onToggleChat={() => setChatOpen(!showChatPanel)}
-          onToggleFeaturePanel={() => setIsFeaturePanelOpen(!isFeaturePanelOpen)}
-          onSearchOpen={() => setIsCommandPaletteOpen(true)}
+      {/* Content Area Below Headers */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Enhanced Sidebar - Below Headers */}
+        <Sidebar
+          isOpen={isSidebarOpen}
+          isCollapsed={isSidebarCollapsed}
+          onToggle={setIsSidebarOpen}
+          onCollapse={setIsSidebarCollapsed}
         />
+
+        {/* Main Content Area */}
+        <div className="flex-1 flex flex-col overflow-hidden">
 
         {/* Content Area - Multi-column layout */}
         <motion.div
@@ -115,8 +118,9 @@ export function DashboardLayout({ children, forceChatOpen }: DashboardLayoutProp
           )}
         </motion.div>
 
-        {/* Bottom Slide Bar */}
-        <BottomBar onCommandPaletteOpen={() => setIsCommandPaletteOpen(true)} />
+          {/* Bottom Slide Bar */}
+          <BottomBar onCommandPaletteOpen={() => setIsCommandPaletteOpen(true)} />
+        </div>
       </div>
 
       {/* Command Palette Modal */}
