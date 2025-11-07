@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/logo"
 import { RotateCcw } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { ThemeSwitcher } from "@/components/dashboard/theme-switcher"
 
 export function Settings() {
   const { isModuleEnabled, toggleModule, resetToDefaults, enabledModules } = useSidebar()
@@ -37,6 +38,11 @@ export function Settings() {
 
       {/* Settings Content */}
       <div className="max-w-6xl mx-auto space-y-6">
+        {/* Theme Selection Section */}
+        <Card className="p-6">
+          <ThemeSwitcher />
+        </Card>
+
         {/* Sidebar Modules Section */}
         <Card className="p-6">
           <div className="flex items-center justify-between mb-6">

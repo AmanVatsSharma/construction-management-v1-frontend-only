@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { ChatProvider } from "@/lib/chat-context"
 import { AuthProvider } from "@/lib/auth-context"
 import { SidebarProvider } from "@/lib/sidebar-context"
+import { ThemeProvider } from "@/lib/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import "./globals.css"
 
@@ -31,13 +32,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <AuthProvider>
-          <SidebarProvider>
-            <ChatProvider>{children}</ChatProvider>
-          </SidebarProvider>
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <SidebarProvider>
+              <ChatProvider>{children}</ChatProvider>
+            </SidebarProvider>
+          </AuthProvider>
+        </ThemeProvider>
         <Analytics />
         <Toaster />
       </body>

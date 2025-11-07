@@ -2,9 +2,17 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant theme-blueprint (&:is(.theme-blueprint *));
+@custom-variant theme-dark (&:is(.theme-dark *));
+@custom-variant theme-construction (&:is(.theme-construction *));
 
-:root {
-  /* Blueprint Industrial Theme */
+/* ========================================
+   THEME 1: Blueprint Industrial (Modernized Light)
+   Default theme - Professional, clean, modern
+======================================== */
+:root,
+.theme-blueprint {
+  /* Blueprint Industrial Theme Colors */
   --blueprint-blue: #0f4c81;
   --blueprint-blue-light: #1a6ba8;
   --blueprint-blue-dark: #0a3458;
@@ -21,7 +29,7 @@
   --neutral-100: #f5f5f5;
   --white: #ffffff;
 
-  /* Blueprint grid background */
+  /* Blueprint grid background pattern */
   --blueprint-grid: repeating-linear-gradient(
       0deg,
       transparent,
@@ -38,25 +46,26 @@
     );
 
   /* Design tokens */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --background: #ffffff;
+  --foreground: #0f0f0f;
+  --card: #fafafa;
+  --card-foreground: #0f0f0f;
+  --popover: #ffffff;
+  --popover-foreground: #0f0f0f;
   --primary: #0f4c81;
-  --primary-foreground: oklch(0.985 0 0);
+  --primary-hover: #1a6ba8;
+  --primary-foreground: #ffffff;
   --secondary: #ffc107;
   --secondary-foreground: #0f0f0f;
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted: #f5f5f5;
+  --muted-foreground: #666666;
   --accent: #2ecc71;
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --accent-foreground: #0f0f0f;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #0f4c81;
   --chart-1: #0f4c81;
   --chart-2: #ffc107;
   --chart-3: #2ecc71;
@@ -66,46 +75,140 @@
   --sidebar: #ffffff;
   --sidebar-foreground: #0f0f0f;
   --sidebar-primary: #0f4c81;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: #ffc107;
-  --sidebar-accent-foreground: #0f0f0f;
-  --sidebar-border: #e0e0e0;
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: #0f0f0f;
-  --foreground: #f5f5f5;
-  --card: #1a1a1a;
-  --card-foreground: #f5f5f5;
-  --popover: #1a1a1a;
-  --popover-foreground: #f5f5f5;
-  --primary: #1a6ba8;
-  --primary-foreground: #ffffff;
-  --secondary: #ffc107;
-  --secondary-foreground: #0f0f0f;
-  --muted: #2d2d2d;
-  --muted-foreground: #b3b3b3;
-  --accent: #2ecc71;
-  --accent-foreground: #0f0f0f;
-  --destructive: #d32f2f;
-  --destructive-foreground: #ff6b6b;
-  --border: #2d2d2d;
-  --input: #2d2d2d;
-  --ring: #404040;
-  --chart-1: #1a6ba8;
-  --chart-2: #ffc107;
-  --chart-3: #2ecc71;
-  --chart-4: #0f4c81;
-  --chart-5: #b3b3b3;
-  --sidebar: #1a1a1a;
-  --sidebar-foreground: #f5f5f5;
-  --sidebar-primary: #1a6ba8;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #ffc107;
   --sidebar-accent-foreground: #0f0f0f;
-  --sidebar-border: #2d2d2d;
-  --sidebar-ring: #404040;
+  --sidebar-border: #e0e0e0;
+  --sidebar-ring: #0f4c81;
+}
+
+/* ========================================
+   THEME 2: Z-Black Modern Dark
+   Pure black with neon accents - Ultra modern
+======================================== */
+.theme-dark,
+.dark {
+  /* Z-Black Theme Colors */
+  --blueprint-blue: #3b82f6;
+  --blueprint-blue-light: #60a5fa;
+  --blueprint-blue-dark: #2563eb;
+  --safety-yellow: #fbbf24;
+  --accent-green: #10b981;
+  --neutral-900: #000000;
+  --neutral-800: #0a0a0a;
+  --neutral-700: #171717;
+  --neutral-600: #262626;
+  --neutral-500: #525252;
+  --neutral-400: #737373;
+  --neutral-300: #a3a3a3;
+  --neutral-200: #1f1f1f;
+  --neutral-100: #141414;
+  --white: #ffffff;
+
+  /* No grid pattern for dark theme - pure black */
+  --blueprint-grid: none;
+
+  /* Design tokens */
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --primary-foreground: #ffffff;
+  --secondary: #8b5cf6;
+  --secondary-foreground: #ffffff;
+  --muted: #171717;
+  --muted-foreground: #a3a3a3;
+  --accent: #10b981;
+  --accent-foreground: #000000;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1f1f1f;
+  --input: #1f1f1f;
+  --ring: #3b82f6;
+  --chart-1: #3b82f6;
+  --chart-2: #8b5cf6;
+  --chart-3: #10b981;
+  --chart-4: #60a5fa;
+  --chart-5: #525252;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #8b5cf6;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1f1f1f;
+  --sidebar-ring: #3b82f6;
+}
+
+/* ========================================
+   THEME 3: Classic Construction
+   Yellow/Charcoal construction palette - Bold and industrial
+======================================== */
+.theme-construction {
+  /* Construction Theme Colors */
+  --blueprint-blue: #f59e0b;
+  --blueprint-blue-light: #fbbf24;
+  --blueprint-blue-dark: #d97706;
+  --safety-yellow: #fbbf24;
+  --accent-green: #10b981;
+  --neutral-900: #171717;
+  --neutral-800: #262626;
+  --neutral-700: #404040;
+  --neutral-600: #525252;
+  --neutral-500: #737373;
+  --neutral-400: #a3a3a3;
+  --neutral-300: #d4d4d8;
+  --neutral-200: #e4e4e7;
+  --neutral-100: #f4f4f5;
+  --white: #ffffff;
+
+  /* Diagonal stripes pattern for construction theme */
+  --blueprint-grid: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 35px,
+      rgba(245, 158, 11, 0.03) 35px,
+      rgba(245, 158, 11, 0.03) 70px
+    );
+
+  /* Design tokens */
+  --background: #fafaf9;
+  --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+  --primary: #f59e0b;
+  --primary-hover: #fbbf24;
+  --primary-foreground: #ffffff;
+  --secondary: #171717;
+  --secondary-foreground: #ffffff;
+  --muted: #f4f4f5;
+  --muted-foreground: #737373;
+  --accent: #dc2626;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #d4d4d8;
+  --input: #d4d4d8;
+  --ring: #f59e0b;
+  --chart-1: #f59e0b;
+  --chart-2: #171717;
+  --chart-3: #dc2626;
+  --chart-4: #fbbf24;
+  --chart-5: #d4d4d8;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #171717;
+  --sidebar-primary: #f59e0b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #171717;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #d4d4d8;
+  --sidebar-ring: #f59e0b;
 }
 
 @theme inline {
@@ -156,6 +259,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   h1,
   h2,
@@ -170,4 +274,298 @@
 /* Blueprint grid background utility */
 .blueprint-grid {
   background-image: var(--blueprint-grid);
+}
+
+/* ========================================
+   SMOOTH THEME TRANSITIONS
+======================================== */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+/* ========================================
+   MODERN ANIMATIONS & MICRO-INTERACTIONS
+======================================== */
+
+/* Slide In Animations */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale Animations */
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow & Pulse Effects */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Rotate Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ========================================
+   UTILITY ANIMATION CLASSES
+======================================== */
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.3s ease-out;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--primary), 0.1),
+    transparent
+  );
+  background-size: 1000px 100%;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* ========================================
+   HOVER EFFECTS
+======================================== */
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px var(--primary), 0 0 30px var(--primary);
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+======================================== */
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
