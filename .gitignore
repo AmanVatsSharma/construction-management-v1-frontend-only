@@ -98,3 +98,5 @@ logs
 .next/standalone/
 .next/static/
 
+.cursor/
+docs/
