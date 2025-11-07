@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
 import { useEffect } from "react"
-import { DashboardLayout } from "@/components/dashboard/layout"
+import { PremiumLayout } from "@/components/dashboard/premium-layout"
 import { Dashboard } from "@/components/dashboard/pages/dashboard"
 
 // Force dynamic rendering to avoid SSR issues
@@ -24,8 +24,8 @@ export default function Home() {
   }
 
   return (
-    <DashboardLayout>
+    <PremiumLayout>
       <Dashboard />
-    </DashboardLayout>
+    </PremiumLayout>
   )
 }
